@@ -1,8 +1,10 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { useData } from '../context/DataContext';
+import { useLanguage } from '../context/LanguageContext';
+import { MOCK_SHOPS } from '../types/map';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import { motion } from 'framer-motion';
 
 // Fix for default marker icons in Leaflet with React
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -18,45 +20,46 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const MapPage: React.FC = () => {
-  const { shops } = useData();
+  const { t } = useLanguage();
 
   return (
-    <div className="h-[calc(100vh-12rem)] md:h-[calc(100vh-10rem)] w-full rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true} className="h-full w-full">
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {shops.map((shop) => (
-          <Marker key={shop.id} position={[shop.lat, shop.lng]}>
-            <Popup>
-              <div className="p-1">
-                <h3 className="font-bold text-lg text-green-700">{shop.name}</h3>
-                <p className="text-gray-600">{shop.address}</p>
-                <button className="mt-2 w-full bg-green-600 text-white text-xs py-1 rounded hover:bg-green-700 transition-colors">
-                  Get Directions
-                </button>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
-      </MapContainer>
-
-      {/* Search Overlay */}
-      <div className="absolute top-4 left-4 z-[1000] right-4 md:right-auto md:w-80">
-        <div className="bg-white rounded-xl shadow-xl p-4 border border-gray-100">
-          <input
-            type="text"
-            placeholder="Search coffee shops..."
-            className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 outline-hidden"
-          />
-          <div className="mt-4 flex gap-2">
-            <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Nearby</span>
-            <span className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded-full">Top Rated</span>
-          </div>
-        </div>
+    <motion.section
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+    >
+      <div className="mb-8">
+        <h2 className="text-4xl font-black mb-2">{t('locateCoffeeShops')}</h2>
+        <p className="text-slate-500 font-medium">Discover partners giving discounts for using your Chọn xanh sống sạch bottle.</p>
       </div>
-    </div>
+
+      <div className="h-[600px] w-full rounded-3xl overflow-hidden shadow-lg border-2 border-slate-200">
+        <MapContainer center={[10.762622, 106.660172]} zoom={13} scrollWheelZoom={true} className="h-full w-full">
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          {MOCK_SHOPS.map((shop) => (
+            <Marker key={shop.id} position={[shop.lat, shop.lng]}>
+              <Popup>
+                <div className="p-1">
+                  <h3 className="font-bold text-lg text-blue-700">{shop.name}</h3>
+                  <p className="text-gray-600 text-sm">{shop.address}</p>
+                  {shop.isRegistered && (
+                    <div className="mt-2 p-2 bg-blue-50 border border-blue-100 rounded">
+                      <p className="text-blue-600 font-bold text-xs uppercase">Partnered Shop</p>
+                    </div>
+                  )}
+                  <button className="mt-3 w-full bg-slate-900 text-white text-xs py-2 rounded-lg font-bold hover:bg-slate-800 transition-colors uppercase tracking-wider">
+                    Get Directions
+                  </button>
+                </div>
+              </Popup>
+            </Marker>
+          ))}
+        </MapContainer>
+      </div>
+    </motion.section>
   );
 };
 

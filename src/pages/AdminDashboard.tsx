@@ -17,7 +17,7 @@ const AdminDashboard: React.FC = () => {
       <div className="flex justify-between items-end">
         <div>
           <h2 className="text-3xl font-bold text-white">Analytics Overview</h2>
-          <p className="text-slate-400">Real-time performance metrics for ReBottle Ecosystem</p>
+          <p className="text-slate-400">Real-time performance metrics for Chọn xanh sống sạch Ecosystem</p>
         </div>
         <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
           Download Report

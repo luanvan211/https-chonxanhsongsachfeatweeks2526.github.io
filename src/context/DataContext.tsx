@@ -29,19 +29,19 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [messages] = useState<Message[]>([]);
 
   useEffect(() => {
-    const savedUsers = localStorage.getItem('rebottle_users_db');
-    const savedBottles = localStorage.getItem('rebottle_bottles_db');
+    const savedUsers = localStorage.getItem('chonxanh_users_db');
+    const savedBottles = localStorage.getItem('chonxanh_bottles_db');
 
     if (savedUsers) setUsers(JSON.parse(savedUsers));
     if (savedBottles) setBottles(JSON.parse(savedBottles));
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('rebottle_users_db', JSON.stringify(users));
+    localStorage.setItem('chonxanh_users_db', JSON.stringify(users));
   }, [users]);
 
   useEffect(() => {
-    localStorage.setItem('rebottle_bottles_db', JSON.stringify(bottles));
+    localStorage.setItem('chonxanh_bottles_db', JSON.stringify(bottles));
   }, [bottles]);
 
   const addUser = (user: User) => setUsers(prev => [...prev, user]);

@@ -8,4 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  base: '/https-chonxanhsongsachfeatweeks2526.github.io/',
 })
