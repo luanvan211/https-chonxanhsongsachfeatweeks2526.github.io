@@ -33,7 +33,7 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <aside className="w-64 bg-slate-800 border-r border-slate-700 flex flex-col">
         <div className="p-6 flex items-center space-x-2">
           <ShieldCheck className="w-8 h-8 text-indigo-400" />
-          <h1 className="text-xl font-bold tracking-tight">ReBottle Admin</h1>
+          <h1 className="text-xl font-bold tracking-tight">Chọn xanh sống sạch Admin</h1>
         </div>
 
         <nav className="flex-1 px-4 py-4 space-y-1">

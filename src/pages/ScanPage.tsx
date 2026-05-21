@@ -27,7 +27,7 @@ const ScanPage: React.FC = () => {
         registerBottle({
           id: Math.random().toString(36).substr(2, 9),
           ownerId: user.id,
-          type: 'Standard ReBottle',
+          type: 'Standard Chọn xanh sống sạch',
           color: 'Green',
           size: '500ml',
           registeredAt: new Date().toISOString()
@@ -49,7 +49,7 @@ const ScanPage: React.FC = () => {
         registerBottle({
           id: Math.random().toString(36).substr(2, 9),
           ownerId: user.id,
-          type: 'Standard ReBottle',
+          type: 'Standard Chọn xanh sống sạch',
           color: 'Green',
           size: '500ml',
           registeredAt: new Date().toISOString()
@@ -62,7 +62,7 @@ const ScanPage: React.FC = () => {
     <div className="max-w-xl mx-auto flex flex-col items-center justify-center space-y-8 py-12 text-center">
       <div className="bg-white p-8 rounded-3xl shadow-xl w-full">
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Register Your Bottle</h2>
-        <p className="text-gray-500 mb-8">Scan the QR code on your ReBottle to add it to your account.</p>
+        <p className="text-gray-500 mb-8">Scan the QR code on your Chọn xanh sống sạch to add it to your account.</p>
 
         {!scanResult ? (
           <div className="space-y-6">

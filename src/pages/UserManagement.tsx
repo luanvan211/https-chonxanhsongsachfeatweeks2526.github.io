@@ -22,6 +22,8 @@ const UserManagement: React.FC = () => {
         email,
         role: 'user',
         tokens: 100,
+        refills: 0,
+        points: 0,
         bottlesRegistered: []
       });
     }

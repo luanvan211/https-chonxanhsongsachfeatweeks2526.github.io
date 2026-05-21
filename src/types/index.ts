@@ -6,6 +6,8 @@ export interface User {
   name: string;
   role: Role;
   tokens: number;
+  refills: number;
+  points: number;
   bottlesRegistered: string[]; // IDs of registered bottles
 }
 
@@ -24,6 +26,9 @@ export interface CoffeeShop {
   lat: number;
   lng: number;
   address: string;
+  isRegistered?: boolean;
+  contact?: string;
+  vouchers?: { id: string; title: string; discount: string }[];
 }
 
 export interface Voucher {

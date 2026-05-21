@@ -27,7 +27,7 @@ const Login: React.FC = () => {
           </div>
         </div>
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">Welcome Back</h2>
-        <p className="text-center text-gray-500 mb-8">Login to manage your ReBottles</p>
+        <p className="text-center text-gray-500 mb-8">Login to manage your Chọn xanh sống sạchs</p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>

@@ -40,7 +40,7 @@ const UserLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* Sidebar for Desktop */}
       <aside className="hidden md:flex flex-col w-64 bg-white border-r border-gray-200">
         <div className="p-6">
-          <h1 className="text-2xl font-bold text-green-600">ReBottle</h1>
+          <h1 className="text-2xl font-bold text-green-600">Chọn xanh sống sạch</h1>
         </div>
         <nav className="flex-1 px-4 space-y-1">
           {navItems.map((item) => (
@@ -81,7 +81,7 @@ const UserLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <main className="flex-1 overflow-y-auto">
         {/* Mobile Header */}
         <header className="md:hidden bg-white border-b border-gray-200 p-4 flex justify-between items-center sticky top-0 z-50">
-          <h1 className="text-xl font-bold text-green-600">ReBottle</h1>
+          <h1 className="text-xl font-bold text-green-600">Chọn xanh sống sạch</h1>
           <button onClick={handleLogout} className="text-red-600">
             <LogOut className="w-6 h-6" />
           </button>
