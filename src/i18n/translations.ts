@@ -1,0 +1,42 @@
+export const translations = {
+  vi: {
+    welcome: "Chào mừng đến với ứng dụng Bình Nước Bền Vững",
+    description: "Kết nối bình nước tùy chỉnh của bạn với các quán cà phê địa phương.",
+    home: "Trang chủ",
+    customize: "Tùy chỉnh",
+    map: "Bản đồ",
+    metal: "Kim loại",
+    tritan: "Nhựa Tritan",
+    switchLanguage: "English",
+    customizeBottle: "Tùy chỉnh bình của bạn",
+    locateCoffeeShops: "Tìm quán cà phê",
+    vouchers: "Ưu đãi",
+    sustainability: "Phát triển bền vững",
+    plasticSaved: "Chai nhựa đã tiết kiệm",
+    refills: "Lượt đổ đầy",
+    registered: "Đã liên kết",
+    unregistered: "Chưa liên kết",
+    contactInfo: "Thông tin liên hệ",
+  },
+  en: {
+    welcome: "Welcome to our Sustainable Bottle App",
+    description: "Connecting your customizable bottle with local coffee shops.",
+    home: "Home",
+    customize: "Customizer",
+    map: "Map",
+    metal: "Metal",
+    tritan: "Tritan",
+    switchLanguage: "Tiếng Việt",
+    customizeBottle: "Customize Your Bottle",
+    locateCoffeeShops: "Find Coffee Shops",
+    vouchers: "Vouchers",
+    sustainability: "Sustainability",
+    plasticSaved: "Plastic Bottles Saved",
+    refills: "Total Refills",
+    registered: "Partnered",
+    unregistered: "Not Partnered",
+    contactInfo: "Contact Info",
+  }
+};
+
+export type Language = 'vi' | 'en';
